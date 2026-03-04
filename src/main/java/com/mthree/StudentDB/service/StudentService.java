@@ -37,12 +37,14 @@ public class StudentService {
     }
 
     /*
-     * Deletes student from the database
+     * Deletes student from the database based on ID
      */
     public void deleteStudent(Long id) {
         studentRepository.deleteById(id);
     }
-
+    /*
+     * Updates a student's information based on ID
+     */
     public Student updateStudent(Long id, Student updatedStudent) {
         Student student = studentRepository.findById(id).orElse(null);
         if (student != null) {
